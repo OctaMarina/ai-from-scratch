@@ -2,7 +2,8 @@ import numpy as np
 
 
 def sigmoid(x):
-    return 1/(1+np.exp(-x))
+    return 1 / (1 + np.exp(-x))
+
 
 class LogisticRegression:
     def __init__(self, lr=0.0001, n_steps=1000):
@@ -21,7 +22,7 @@ class LogisticRegression:
             predictions = sigmoid(linear_pred)
 
             dw = (1 / n_samples) * np.dot(X.T, (predictions - y))
-            db = (1 / n_samples) * np.sum(predictions-y)
+            db = (1 / n_samples) * np.sum(predictions - y)
 
             self.weights -= self.lr * dw
             self.bias -= self.lr * db
